@@ -50,6 +50,18 @@ function NewsBlog() {
                                 }}> ❤</span> {likeCountArr[index]}
                             </h4>
                             <p>내용</p>
+                            <button onClick={()=>{
+                                //누른 대상을 삭제
+                                //누른 대상의 index 위치 값을 제거
+
+                                //splice 함수 (index, 몇개)
+                                let temp = [...news];
+                                temp.splice(index, 1);
+                                setNews(temp);
+
+                                //좋아요 갯수도 같이 삭제
+                                likeCountArr.splice(index, 1);
+                            }}>삭제</button>
                         </div>
                     )
                 })
