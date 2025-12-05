@@ -1,0 +1,44 @@
+import './Quiz04.css';
+import { useState } from 'react';
+
+function Quiz04(){
+
+    let [arr, setArr] = useState([1, 1]);
+
+    let [boxes, setBoxes] = useState([<div className="box">박스</div>, <div className="box">박스</div>]);
+
+    // for(let i=1; i<=10; i++){
+    //     boxes.push(<div className="box">박스</div>);
+    // }
+
+    return (
+        <div>
+            <div style={{margin:'10px'}}>
+                <button onClick={()=>{
+                    //arr 배열의 길이를 늘려주기
+                    let temp = [...arr, 1];  //[ 1, 1, 1]
+                    //temp.push(1);
+                    setArr(temp);
+                }}>추가</button>
+            </div>
+            {
+                arr.map(()=>{
+                    return <div className="box">박스</div>
+                })
+            }
+
+            {/* {
+                boxes
+            }
+            <button onClick={()=>{
+                    //arr 배열의 길이를 늘려주기
+                    let temp = [...boxes];
+                    temp.push(<div className="box">박스</div>);
+                    setBoxes(temp);
+                }}>추가</button> */}
+
+        </div>
+    )
+}
+
+export default Quiz04;
