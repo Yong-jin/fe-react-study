@@ -88,9 +88,24 @@ function NewsBlog() {
                 <button onClick={()=>{
                     //input 창에 입력된 value를 -> news 배열뒤에 push 추가
                     
+
+                    //추가하려는 텍스트 inputText 
+                    //inputText 값이 비어있으면? 진행 X
+                    inputText = inputText.trim(); //앞뒤공백 제거
+                    //setInputText(inputText.trim());
+
+                    if(inputText == ''){
+                        alert("값 입력하고 발행 눌러주세요");
+                        setInputText('');
+                        return;
+                    }
+
                     let temp = [...news];
                     temp.push(inputText);
-                    setNews(temp);
+                    setNews(temp);  //제목 텍스트 추가
+
+                    likeCountArr.push(0);  //좋아요 갯수 저장하는 것도 같이 추가
+                    // ...likeCountArr 
 
                     setInputText('');
 
