@@ -20,6 +20,7 @@ import Home from './pages/Home';
 import CustomerService from './pages/CustomerService';
 
 import { Routes, Route, Link, useNavigate } from 'react-router';
+import Detail from './pages/Detail';
 
 function FoodMarket() {
 
@@ -57,8 +58,9 @@ function FoodMarket() {
                 <Route path="/detail" element={<div><h1>detail page</h1></div>}></Route>
                 <Route path="/info" element={<div><h1>info page</h1></div>}></Route>
                 <Route path="/help" element={<CustomerService/>}></Route>
+                <Route path="/detail/:id" element={ <Detail foods={foods} />}></Route>
+                <Route path="*" element={<div><h1>존재하지 않는 주소입니다.</h1></div>}></Route>
             </Routes>
-
 
 
 
