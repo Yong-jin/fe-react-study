@@ -115,15 +115,27 @@ function Detail({ foods }) {
                     <p>{food.price}</p>
                     <p>
                         <Button variant="dark" onClick={() => {
-                            setOrderCount(orderCount - 1);
+                            // 마이너스 
+                            if(orderCount > 0)
+                                setOrderCount(orderCount - 1);
+                            // -1 처리후 0보다 작으면 -> 0
+                            // 기존 수량이 0이면? 진행X
                         }}>-</Button>
                         <span> {orderCount} </span>
                         <Button variant="dark" onClick={() => {
-                            setOrderCount(orderCount + 1);
+                            if(orderCount < food.stockCount)
+                                setOrderCount(orderCount + 1);
                         }}>+</Button>
                     </p>
 
-                    <Button variant="primary">주문하기</Button>
+                    {
+                        food.stockCount == 0 ? <Button variant="secondary">품절</Button> : <Button variant="primary">주문하기</Button>
+                    }
+                    {/* <Button variant="warning">품절</Button>
+                    <Button variant="danger">품절</Button>
+                    <Button variant="info">품절</Button>
+                    <Button variant="success">품절</Button>
+                    <Button variant="light">품절</Button> */}
                 </Col>
             </Row>
 
