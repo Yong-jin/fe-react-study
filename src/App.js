@@ -16,6 +16,7 @@ import Quiz05 from './quiz/quiz05/Quiz05';
 import Quiz06 from './quiz/quiz06/Quiz06';
 import FoodMarket from './foodmarket/FoodMarket';
 import AppRS from './rs/AppRS';
+import Login from './rs/Login';
 
 function App() {
   
@@ -34,7 +35,8 @@ function App() {
   //return <Quiz05/>;
   //return <Quiz06/>;
   //return <FoodMarket/>;
-  return <AppRS/>;
+  //return <AppRS/>;
+  return <Login/>;
 
 
   
