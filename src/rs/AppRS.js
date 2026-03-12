@@ -151,6 +151,13 @@ function AppRS(){
             </div>
         </div>
     )
+
+    /*
+        리덕스(툴킷) 라이브러리 설치
+        npm install @reduxjs/toolkit
+        npm install react-redux
+    */
+
 }
 
 export default AppRS;
